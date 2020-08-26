@@ -39,6 +39,8 @@ body {
 }
 
 footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
   background-color: var(--footer-bg);
 }
 
@@ -301,6 +303,7 @@ footer {
   width: 528px;
   height: 581px;
   border-radius: 4px;
+  padding: 40px;
 
   background-color: var(--page-background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -322,11 +325,205 @@ footer {
   cursor: pointer;
 }
 
+.btn-close:hover {
+  color: var(--accent-color);
+}
+
+.btn-close:focus {
+  color: var(--accent-color);
+}
+
 .modal-icon {
   width: 11px;
   height: 11px;
+  fill: currentColor;
+
+  transition: color 250ms var(--main-timing-function);
 }
 
+.callback-form {
+  width: 448px;
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.15;
+
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 12px;
+
+  color: var(--title-color);
+}
+
+.form-field {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-field label {
+  font-size: 12px;
+  line-height: 1.167;
+  letter-spacing: 0.01em;
+
+  margin-bottom: 4px;
+
+  color: var(--primary-text-color);
+}
+
+.form-field input {
+  width: 448px;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding: 12px 16px 12px 42px;
+  outline: none;
+
+  transition: border-color 250ms var(--main-timing-function);
+}
+
+.form-field input:hover {
+  border-color: var(--button-bg-hover);
+}
+
+.form-field input:focus {
+  border-color: var(--button-bg-hover);
+}
+
+.form-field textarea {
+  width: 448px;
+  height: 120px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  resize: none;
+  outline: none;
+
+  transition: border-color 250ms var(--main-timing-function);
+}
+
+.form-field textarea:hover {
+  border-color: var(--button-bg-hover);
+}
+
+.form-field textarea:focus {
+  border-color: var(--button-bg-hover);
+}
+
+.form-field textarea::placeholder {
+  font-size: 12px;
+  line-height: 1.167;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+
+  transition: color 250ms var(--main-timing-function);
+}
+
+.form-field textarea:focus::placeholder {
+  color: transparent;
+}
+
+.form-field input:hover ~ .form-icon {
+  color: var(--accent-color);
+}
+
+.form-field input:focus ~ .form-icon {
+  color: var(--accent-color);
+}
+
+.form-icon {
+  position: absolute;
+  left: 12px;
+  bottom: 11px;
+  width: 18px;
+  height: 18px;
+
+  fill: currentColor;
+  color: var(--title-color);
+
+  transition: color 250ms var(--main-timing-function);
+}
+
+.custom-check-icon {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  margin-left: 12px;
+  margin-right: 8.38px;
+  border: 2px solid var(--title-color);
+  border-radius: 2px;
+}
+
+.checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.checkbox:checked + .custom-check-icon {
+  background-color: var(--accent-color);
+  background-image: url(../images/icon-check.svg);
+  background-size: contain;
+  background-origin: border-box;
+  border-color: var(--accent-color);
+}
+
+.agreement {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+
+  font-size: 14px;
+  line-height: 1.71;
+  color: var(--primary-text-color);
+}
+
+.agreement a {
+  text-decoration-line: underline;
+  color: var(--accent-color);
+}
+
+.button-send {
+  display: block;
+  width: 200px;
+  height: 50px;
+  padding: 10px 56px;
+  border-radius: 4px;
+  border-width: 0px;
+  margin-left: auto;
+  margin-right: auto;
+
+  color: var(--secondary-text-color);
+  background-color: var(--accent-color);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.84;
+  letter-spacing: 0.06em;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--main-timing-function);
+  cursor: pointer;
+}
+
+.button-send:hover {
+  background-color: var(--button-bg-hover);
+}
+
+.button-send:focus {
+  background-color: var(--button-bg-hover);
+}
 /* all section title (home page) */
 .section-title {
   margin-top: 0px;
@@ -623,7 +820,6 @@ footer .flex-container {
 
 .footer-logo {
   display: block;
-  margin-top: 60px;
   margin-bottom: 20px;
 
   color: var(--secondary-text-color);
@@ -636,7 +832,7 @@ footer .flex-container {
 .addres {
   padding-left: 0px;
   margin-top: 0px;
-  margin-bottom: 60px;
+  margin-bottom: 0px;
 
   color: var(--secondary-text-color);
   font-size: 14px;
@@ -701,7 +897,7 @@ footer .flex-container {
 }
 
 .footer-title {
-  margin-top: 72px;
+  margin-top: 12px;
   margin-bottom: 20px;
 
   color: var(--secondary-text-color);
@@ -709,6 +905,81 @@ footer .flex-container {
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
+}
+
+.mail-container {
+  display: block;
+  width: 570px;
+}
+
+.subscribe-form {
+  display: flex;
+}
+
+.entry-field {
+  width: 358px;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  padding: 15px 16px;
+  margin-right: 12px;
+
+  background-color: var(--footer-bg);
+}
+
+.subscribe-form input {
+  color: var(--footer-phones);
+  font-size: 16px;
+  line-height: 1.25;
+  outline: none;
+}
+
+.subscribe-form input::placeholder {
+  color: var(--footer-phones);
+  font-size: 16px;
+  line-height: 1.25;
+
+  transition: color 250ms var(--main-timing-function);
+}
+
+.subscribe-form input:focus::placeholder {
+  color: transparent;
+}
+
+.button-subscribe {
+  display: inline-flex;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  padding: 10px 29px;
+  border-radius: 4px;
+  border-width: 0px;
+
+  color: var(--secondary-text-color);
+  background-color: var(--accent-color);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.84;
+  letter-spacing: 0.06em;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--main-timing-function);
+  cursor: pointer;
+}
+
+.button-subscribe:hover {
+  background-color: var(--button-bg-hover);
+}
+
+.button-subscribe:focus {
+  background-color: var(--button-bg-hover);
+}
+
+.button-subscribe-icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
 }
 
 /* portfolio navigation (portfolio page) */
